@@ -1,8 +1,9 @@
 mod data;
+mod diagnostics;
 mod service;
 
 #[::grafana_plugin_sdk::main(
-    services(data),
+    services(data, diagnostics),
     init_subscriber = true,
     shutdown_handler = "0.0.0.0:10002"
 )]

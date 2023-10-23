@@ -2,7 +2,7 @@ use anyhow::{anyhow, Error};
 use async_trait::async_trait;
 use futures::stream::FuturesOrdered;
 use grafana_plugin_sdk::backend::{
-    self, BoxDataResponseStream, DataQuery, DataQueryError, DataService, QueryDataRequest,
+    BoxDataResponseStream, DataQuery, DataQueryError, DataResponse, DataService, QueryDataRequest,
 };
 use serde::Deserialize;
 use thiserror::Error;
@@ -40,7 +40,6 @@ impl DataService for Service {
         &self,
         QueryDataRequest {
             plugin_context,
-            headers: _,
             queries,
             ..
         }: QueryDataRequest<<Self as DataService>::Query>,
@@ -58,16 +57,7 @@ impl DataService for Service {
             )
         }
 
-        let ds = plugin_context.datasource_instance_settings.as_ref();
-        let namespace = match ds
-            .and_then(|ds| ds.json_data.get("namespace"))
-            .and_then(|value| value.as_str())
-        {
-            Some(namespace) => namespace,
-            None => return panic(queries, anyhow!("Empty Namespace")),
-        };
-
-        let service = match self.namespaced(namespace).await {
+        let service = match self.namespaced_with_ctx(&plugin_context).await {
             Ok(service) => service,
             Err(reason) => return panic(queries, reason),
         };
@@ -90,9 +80,7 @@ impl DataService for Service {
                                 Some(_) | None => Err(anyhow!("Empty SQL")),
                             } {
                                 Ok(frame) => match frame.check().map_err(Into::into) {
-                                    Ok(frame) => {
-                                        Ok(backend::DataResponse::new(ref_id, vec![frame]))
-                                    }
+                                    Ok(frame) => Ok(DataResponse::new(ref_id, vec![frame])),
                                     Err(reason) => Err(QueryError { reason, ref_id }),
                                 },
                                 Err(reason) => Err(QueryError { reason, ref_id }),

@@ -24,6 +24,7 @@ async-trait = { workspace = true }
 dash-query-provider = { workspace = true }
 futures = { workspace = true }
 grafana-plugin-sdk = { workspace = true, features = ["arrow"] }
+prometheus = { workspace = true }
 serde = { workspace = true, features = ["derive"] }
 thiserror = { workspace = true }
 tokio = { workspace = true }
