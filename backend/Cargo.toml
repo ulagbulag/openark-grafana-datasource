@@ -1,0 +1,30 @@
+[package]
+name = "openark-grafana-datasource-backend"
+
+authors = { workspace = true }
+description = { workspace = true }
+documentation = { workspace = true }
+edition = { workspace = true }
+include = { workspace = true }
+keywords = { workspace = true }
+license = { workspace = true }
+readme = { workspace = true }
+rust-version = { workspace = true }
+homepage = { workspace = true }
+repository = { workspace = true }
+version = { workspace = true }
+
+[[bin]]
+name = "gpx_openark"
+path = "./src/main.rs"
+
+[dependencies]
+anyhow = { workspace = true }
+async-trait = { workspace = true }
+dash-query-provider = { workspace = true }
+futures = { workspace = true }
+grafana-plugin-sdk = { workspace = true, features = ["arrow"] }
+serde = { workspace = true, features = ["derive"] }
+thiserror = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }

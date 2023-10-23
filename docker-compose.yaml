@@ -8,9 +8,35 @@ services:
       context: ./.config
       args:
         grafana_image: ${GRAFANA_IMAGE:-grafana-enterprise}
-        grafana_version: ${GRAFANA_VERSION:-10.0.3}
+        grafana_version: ${GRAFANA_VERSION:-10.1.5-ubuntu}
     ports:
       - 3000:3000/tcp
     volumes:
       - ./dist:/var/lib/grafana/plugins/ulagbulag-openark-datasource
+      - ./kube:/usr/share/grafana/.kube:ro
       - ./provisioning:/etc/grafana/provisioning
+
+  frontend:
+    image: node:18 # glibc >= 2.29
+    command:
+      - sh
+      - -c
+      - 'yarn install && yarn run dev'
+    working_dir: /home/node/app
+    volumes:
+      - .:/home/node/app
+
+  backend:
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile.devel
+    volumes:
+      - './:/usr/local/src'
+    command:
+      - cargo
+      - watch
+      - --why
+      - -x
+      - 'build --release'
+      - -s
+      - rm -rf ./dist/gpx_*_linux_amd64 && cp ./target/release/gpx_openark ./dist/gpx_openark_linux_amd64 && nc -z grafana 10001

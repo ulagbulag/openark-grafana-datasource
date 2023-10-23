@@ -1,0 +1,28 @@
+[workspace]
+members = ["./backend"]
+resolver = "2"
+
+[workspace.package]
+authors = ["Ho Kim <ho.kim@ulagbulag.io>"]
+description = "OpenARK Grafana Datasource Plugin"
+documentation = "https://docs.rs/openark-grafana-datasource-backend"
+edition = "2021"
+include = ["src/**/*.rs", "Cargo.toml"]
+keywords = ["grafana", "iac", "kubernetes", "openark"]
+license = "GPL-3.0-or-later WITH Classpath-exception-2.0"
+readme = "./README.md"
+rust-version = "1.62"
+homepage = "https://github.com/ulagbulag/OpenARK"
+repository = "https://github.com/ulagbulag/OpenARK"
+version = "1.0.0"
+
+[workspace.dependencies]
+anyhow = { version = "1.0" }
+async-trait = { version = "0.1" }
+dash-query-provider = { git = "https://github.com/ulagbulag/OpenARK.git" }
+futures = { version = "0.3" }
+grafana-plugin-sdk = { git = "https://github.com/ulagbulag/grafana-plugin-sdk-rust.git" }
+serde = { version = "1.0" }
+thiserror = { version = "1.0" }
+tokio = { version = "1.33" }
+tracing = { version = "0.1" }
