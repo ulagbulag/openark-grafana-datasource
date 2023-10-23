@@ -18,6 +18,12 @@ const config = async (env): Promise<Configuration> => {
             force: true,
             toType: "file",
           },
+          {
+            from: '../provisioning/.gitkeep',
+            to: './.gitkeep',
+            force: true,
+            toType: "file",
+          },
         ],
       }),
       new PermissionsOutputPlugin({

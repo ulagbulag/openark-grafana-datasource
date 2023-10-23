@@ -14,7 +14,7 @@ services:
     volumes:
       - ./dist:/var/lib/grafana/plugins/ulagbulag-openark-datasource
       - ./kube:/usr/share/grafana/.kube:ro
-      - ./provisioning:/etc/grafana/provisioning
+      - /etc/grafana/provisioning:/etc/grafana/provisioning
 
   frontend:
     image: node:18 # glibc >= 2.29
@@ -22,6 +22,7 @@ services:
       - sh
       - -c
       - 'yarn install && yarn run dev'
+    user: ${UID:-0}:${GID:-0}
     working_dir: /home/node/app
     volumes:
       - .:/home/node/app
@@ -30,6 +31,7 @@ services:
     build:
       context: .
       dockerfile: ./backend/Dockerfile.devel
+    user: ${UID:-0}:${GID:-0}
     volumes:
       - './:/usr/local/src'
     command:
