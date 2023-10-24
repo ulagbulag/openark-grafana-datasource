@@ -65,40 +65,19 @@ impl NamespacedService {
 
 impl NamespacedService {
     pub async fn sql(&self, name: &str, sql: &str) -> Result<Frame> {
-        let records = self.client.sql(sql).await?.collect().await?;
-
-        let frame = records
-            .into_iter()
-            .flat_map(|record| {
-                record
-                    .schema()
-                    .all_fields()
-                    .iter()
-                    // TODO: struct field support (flatten)
-                    .filter(|field| field.name() == "timestamp")
-                    // TODO: field aggregation
-                    .next()
-                    .into_iter()
-                    .filter_map(|field| {
-                        record.column_by_name(field.name()).and_then(|array| {
-                            array
-                                .as_ref()
-                                // TODO: dynamic slice
-                                // .slice(0, 10)
-                                .try_into_field(field.name())
-                                .ok()
-                        })
-                    })
-                    .collect::<Vec<_>>()
-            })
-            // TODO: field aggregation
-            .skip(1)
-            .next()
-            .into_iter()
-            .collect::<Vec<_>>()
-            .into_frame(name);
-
-        Ok(frame)
+        match self.client.sql_and_flatten(sql).await? {
+            Some(record) => Ok(record
+                .schema()
+                .all_fields()
+                .into_iter()
+                .filter_map(|field| {
+                    record
+                        .column_by_name(field.name())
+                        .and_then(|array| array.clone().try_into_field(field.name()).ok())
+                })
+                .into_frame(name)),
+            None => Ok(Frame::new(name)),
+        }
     }
 }
 

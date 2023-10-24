@@ -21,7 +21,7 @@ anyhow = { version = "1.0" }
 async-trait = { version = "0.1" }
 dash-query-provider = { git = "https://github.com/ulagbulag/OpenARK.git" }
 futures = { version = "0.3" }
-grafana-plugin-sdk = { git = "https://github.com/ulagbulag/grafana-plugin-sdk-rust.git" }
+grafana-plugin-sdk = { git = "https://github.com/ulagbulag/grafana-plugin-sdk-rust.git", branch = "replace-arrow" }
 prometheus = { version = "0.13" }
 serde = { version = "1.0" }
 thiserror = { version = "1.0" }
