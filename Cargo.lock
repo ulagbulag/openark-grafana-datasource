@@ -2332,7 +2332,7 @@ dependencies = [
 [[package]]
 name = "grafana-plugin-sdk"
 version = "0.4.2"
-source = "git+https://github.com/ulagbulag/grafana-plugin-sdk-rust.git?branch=replace-arrow#d87b376ec25dfcd574e7a311996f284918fc27ed"
+source = "git+https://github.com/ulagbulag/grafana-plugin-sdk-rust.git?branch=replace-arrow#69688ca7ef555fa348984195e824f41e14c07c1b"
 dependencies = [
  "arrow",
  "cfg-if",
@@ -2363,7 +2363,7 @@ dependencies = [
 [[package]]
 name = "grafana-plugin-sdk-macros"
 version = "0.4.2"
-source = "git+https://github.com/ulagbulag/grafana-plugin-sdk-rust.git?branch=replace-arrow#d87b376ec25dfcd574e7a311996f284918fc27ed"
+source = "git+https://github.com/ulagbulag/grafana-plugin-sdk-rust.git?branch=replace-arrow#69688ca7ef555fa348984195e824f41e14c07c1b"
 dependencies = [
  "proc-macro2",
  "quote",

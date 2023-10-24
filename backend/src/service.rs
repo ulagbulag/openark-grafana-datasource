@@ -3,6 +3,11 @@ use std::{collections::HashMap, sync::Arc};
 use anyhow::{anyhow, Result};
 use dash_query_provider::{QueryClient, QueryClientArgs};
 use grafana_plugin_sdk::{
+    arrow::{
+        array::ArrayRef,
+        compute::cast,
+        datatypes::{DataType, Field, TimeUnit},
+    },
     backend::PluginContext,
     data::{ArrayRefIntoField, Frame},
     prelude::IntoFrame,
@@ -73,8 +78,14 @@ impl NamespacedService {
                 .filter_map(|field| {
                     record
                         .column_by_name(field.name())
-                        .and_then(|array| array.clone().try_into_field(field.name()).ok())
+                        .cloned()
+                        .map(|array| (field, array))
                 })
+                .map(|(field, array)| {
+                    let array = convert_timestamp(field, array);
+                    (field, array)
+                })
+                .filter_map(|(field, array)| array.try_into_field(field.name()).ok())
                 .into_frame(name)),
             None => Ok(Frame::new(name)),
         }
@@ -92,5 +103,15 @@ impl ParseNamespace for PluginContext {
             .and_then(|ds| ds.json_data.get("namespace"))
             .and_then(|value| value.as_str())
             .ok_or_else(|| anyhow!("Empty Namespace"))
+    }
+}
+
+/// Converts the array to TimestampArray if possible,
+/// and return the original array if not convertable
+fn convert_timestamp(field: &Field, array: ArrayRef) -> ArrayRef {
+    if field.name() == "timestamp" && array.data_type() == &DataType::Utf8 {
+        cast(&array, &DataType::Timestamp(TimeUnit::Nanosecond, None)).unwrap_or(array)
+    } else {
+        array
     }
 }
