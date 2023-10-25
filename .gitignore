@@ -147,6 +147,7 @@ target/
 # Grafana outputs
 /provisioning/*
 !/provisioning/.gitkeep
+/ulagbulag-openark-datasource*
 
 # Kubernetes
 /kube/*

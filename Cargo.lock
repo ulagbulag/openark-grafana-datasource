@@ -40,7 +40,7 @@ dependencies = [
  "actix-service",
  "actix-tls",
  "actix-utils",
- "ahash 0.8.5",
+ "ahash 0.8.6",
  "base64 0.21.5",
  "bitflags 2.4.1",
  "bytes",
@@ -174,7 +174,7 @@ dependencies = [
  "actix-tls",
  "actix-utils",
  "actix-web-codegen",
- "ahash 0.8.5",
+ "ahash 0.8.6",
  "bytes",
  "bytestring",
  "cfg-if",
@@ -238,9 +238,9 @@ dependencies = [
 
 [[package]]
 name = "ahash"
-version = "0.8.5"
+version = "0.8.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cd7d5a2cecb58716e47d67d5703a249964b14c7be1ec3cad3affc295b2d1c35d"
+checksum = "91429305e9f0a25f6205c5b8e0d2db09e0708a7a6df0f42212bb56c32c8ac97a"
 dependencies = [
  "cfg-if",
  "const-random",
@@ -373,7 +373,7 @@ dependencies = [
 [[package]]
 name = "ark-core"
 version = "0.1.0"
-source = "git+https://github.com/ulagbulag/OpenARK.git#37e4483df6b3abd34adc0e47a633a516a98bd628"
+source = "git+https://github.com/ulagbulag/OpenARK.git#d580c6ffefaa2996026dd3cd7bb8c185266f5400"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -385,7 +385,7 @@ dependencies = [
 [[package]]
 name = "ark-core-k8s"
 version = "0.1.0"
-source = "git+https://github.com/ulagbulag/OpenARK.git#37e4483df6b3abd34adc0e47a633a516a98bd628"
+source = "git+https://github.com/ulagbulag/OpenARK.git#d580c6ffefaa2996026dd3cd7bb8c185266f5400"
 dependencies = [
  "anyhow",
  "ark-core",
@@ -414,7 +414,7 @@ version = "47.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7fab9e93ba8ce88a37d5a30dce4b9913b75413dc1ac56cb5d72e5a840543f829"
 dependencies = [
- "ahash 0.8.5",
+ "ahash 0.8.6",
  "arrow-arith",
  "arrow-array",
  "arrow-buffer",
@@ -451,7 +451,7 @@ version = "47.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d02efa7253ede102d45a4e802a129e83bcc3f49884cab795b1ac223918e4318d"
 dependencies = [
- "ahash 0.8.5",
+ "ahash 0.8.6",
  "arrow-buffer",
  "arrow-data",
  "arrow-schema",
@@ -577,7 +577,7 @@ version = "47.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "114a348ab581e7c9b6908fcab23cb39ff9f060eb19e72b13f8fb8eaa37f65d22"
 dependencies = [
- "ahash 0.8.5",
+ "ahash 0.8.6",
  "arrow-array",
  "arrow-buffer",
  "arrow-data",
@@ -601,7 +601,7 @@ version = "47.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d5c71e003202e67e9db139e5278c79f5520bb79922261dfe140e4637ee8b6108"
 dependencies = [
- "ahash 0.8.5",
+ "ahash 0.8.6",
  "arrow-array",
  "arrow-buffer",
  "arrow-data",
@@ -1129,9 +1129,9 @@ dependencies = [
 
 [[package]]
 name = "clap"
-version = "4.4.6"
+version = "4.4.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d04704f56c2cde07f43e8e2c154b43f216dc5c92fc98ada720177362f953b956"
+checksum = "ac495e00dcec98c83465d5ad66c5c4fabd652fd6686e7c6269b117e729a6f17b"
 dependencies = [
  "clap_builder",
  "clap_derive",
@@ -1139,9 +1139,9 @@ dependencies = [
 
 [[package]]
 name = "clap_builder"
-version = "4.4.6"
+version = "4.4.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0e231faeaca65ebd1ea3c737966bf858971cd38c3849107aa3ea7de90a804e45"
+checksum = "c77ed9a32a62e6ca27175d00d29d05ca32e396ea1eb5fb01d8256b669cec7663"
 dependencies = [
  "anstream",
  "anstyle",
@@ -1151,9 +1151,9 @@ dependencies = [
 
 [[package]]
 name = "clap_derive"
-version = "4.4.2"
+version = "4.4.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0862016ff20d69b84ef8247369fabf5c008a7417002411897d40ee1f4532b873"
+checksum = "cf9804afaaf59a91e75b022a30fb7229a7901f60c755489cc61c9b423b836442"
 dependencies = [
  "heck",
  "proc-macro2",
@@ -1163,9 +1163,9 @@ dependencies = [
 
 [[package]]
 name = "clap_lex"
-version = "0.5.1"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cd7cc57abe963c6d3b9d8be5b06ba7c8957a930305ca90304f24ef040aa6f961"
+checksum = "702fc72eb24e5a1e48ce58027a675bc24edd52096d5397d4aea7c6dd9eca0bd1"
 
 [[package]]
 name = "cmake"
@@ -1465,7 +1465,7 @@ dependencies = [
 [[package]]
 name = "dash-api"
 version = "0.1.0"
-source = "git+https://github.com/ulagbulag/OpenARK.git#37e4483df6b3abd34adc0e47a633a516a98bd628"
+source = "git+https://github.com/ulagbulag/OpenARK.git#d580c6ffefaa2996026dd3cd7bb8c185266f5400"
 dependencies = [
  "anyhow",
  "chrono",
@@ -1484,7 +1484,7 @@ dependencies = [
 [[package]]
 name = "dash-pipe-provider"
 version = "0.1.0"
-source = "git+https://github.com/ulagbulag/OpenARK.git#37e4483df6b3abd34adc0e47a633a516a98bd628"
+source = "git+https://github.com/ulagbulag/OpenARK.git#d580c6ffefaa2996026dd3cd7bb8c185266f5400"
 dependencies = [
  "Inflector",
  "anyhow",
@@ -1520,7 +1520,7 @@ dependencies = [
 [[package]]
 name = "dash-provider"
 version = "0.1.0"
-source = "git+https://github.com/ulagbulag/OpenARK.git#37e4483df6b3abd34adc0e47a633a516a98bd628"
+source = "git+https://github.com/ulagbulag/OpenARK.git#d580c6ffefaa2996026dd3cd7bb8c185266f5400"
 dependencies = [
  "Inflector",
  "actix-web",
@@ -1555,7 +1555,7 @@ dependencies = [
 [[package]]
 name = "dash-provider-api"
 version = "0.1.0"
-source = "git+https://github.com/ulagbulag/OpenARK.git#37e4483df6b3abd34adc0e47a633a516a98bd628"
+source = "git+https://github.com/ulagbulag/OpenARK.git#d580c6ffefaa2996026dd3cd7bb8c185266f5400"
 dependencies = [
  "k8s-openapi",
  "schemars",
@@ -1565,7 +1565,7 @@ dependencies = [
 [[package]]
 name = "dash-query-provider"
 version = "0.1.0"
-source = "git+https://github.com/ulagbulag/OpenARK.git#37e4483df6b3abd34adc0e47a633a516a98bd628"
+source = "git+https://github.com/ulagbulag/OpenARK.git#d580c6ffefaa2996026dd3cd7bb8c185266f5400"
 dependencies = [
  "anyhow",
  "clap",
@@ -1604,7 +1604,7 @@ version = "32.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7014432223f4d721cb9786cd88bb89e7464e0ba984d4a7f49db7787f5f268674"
 dependencies = [
- "ahash 0.8.5",
+ "ahash 0.8.6",
  "arrow",
  "arrow-array",
  "arrow-schema",
@@ -1652,7 +1652,7 @@ version = "32.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cb3903ed8f102892f17b48efa437f3542159241d41c564f0d1e78efdc5e663aa"
 dependencies = [
- "ahash 0.8.5",
+ "ahash 0.8.6",
  "arrow",
  "arrow-array",
  "arrow-buffer",
@@ -1692,7 +1692,7 @@ version = "32.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "24c382676338d8caba6c027ba0da47260f65ffedab38fda78f6d8043f607557c"
 dependencies = [
- "ahash 0.8.5",
+ "ahash 0.8.6",
  "arrow",
  "arrow-array",
  "datafusion-common",
@@ -1725,7 +1725,7 @@ version = "32.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "57b4968e9a998dc0476c4db7a82f280e2026b25f464e4aa0c3bb9807ee63ddfd"
 dependencies = [
- "ahash 0.8.5",
+ "ahash 0.8.6",
  "arrow",
  "arrow-array",
  "arrow-buffer",
@@ -1759,7 +1759,7 @@ version = "32.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "efd0d1fe54e37a47a2d58a1232c22786f2c28ad35805fdcd08f0253a8b0aaa90"
 dependencies = [
- "ahash 0.8.5",
+ "ahash 0.8.6",
  "arrow",
  "arrow-array",
  "arrow-buffer",
@@ -1816,7 +1816,7 @@ dependencies = [
 [[package]]
 name = "deltalake"
 version = "0.17.0"
-source = "git+https://github.com/delta-io/delta-rs.git#cffc4d76e4cf6d1967823e7eb151492e8c312712"
+source = "git+https://github.com/delta-io/delta-rs.git#2cbf938ab13d06b411b69fc7f4b14879efd39bfd"
 dependencies = [
  "arrow",
  "arrow-array",
@@ -2415,7 +2415,7 @@ version = "0.13.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "43a3c133739dddd0d2990f9a4bdf8eb4b21ef50e4851ca85ab661199821d510e"
 dependencies = [
- "ahash 0.8.5",
+ "ahash 0.8.6",
 ]
 
 [[package]]
@@ -2424,7 +2424,7 @@ version = "0.14.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f93e7192158dbcda357bdec5fb5788eebf8bbac027f3f33e719d29135ae84156"
 dependencies = [
- "ahash 0.8.5",
+ "ahash 0.8.6",
  "allocator-api2",
 ]
 
@@ -2906,7 +2906,7 @@ version = "0.86.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fde2bd0b2d248be72f30c658b728f87e84c68495bec2c689dff7a3479eb29afd"
 dependencies = [
- "ahash 0.8.5",
+ "ahash 0.8.6",
  "async-trait",
  "backoff",
  "derivative",
@@ -3583,7 +3583,7 @@ version = "47.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0463cc3b256d5f50408c49a4be3a16674f4c8ceef60941709620a062b1f6bf4d"
 dependencies = [
- "ahash 0.8.5",
+ "ahash 0.8.6",
  "arrow-array",
  "arrow-buffer",
  "arrow-cast",
@@ -4478,7 +4478,7 @@ checksum = "1b80e3dec595989ea8510028f30c408a4630db12c9cbb8de34203b89d6577e99"
 dependencies = [
  "log",
  "ring 0.16.20",
- "sct 0.7.0",
+ "sct 0.7.1",
  "webpki 0.22.4",
 ]
 
@@ -4491,7 +4491,7 @@ dependencies = [
  "log",
  "ring 0.17.5",
  "rustls-webpki",
- "sct 0.7.0",
+ "sct 0.7.1",
 ]
 
 [[package]]
@@ -4612,12 +4612,12 @@ dependencies = [
 
 [[package]]
 name = "sct"
-version = "0.7.0"
+version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d53dcdb7c9f8158937a7981b48accfd39a43af418591a5d008c7b22b5e1b7ca4"
+checksum = "da046153aa2352493d6cb7da4b6e5c0c057d8a1d0a9aa8560baffdd945acd414"
 dependencies = [
- "ring 0.16.20",
- "untrusted 0.7.1",
+ "ring 0.17.5",
+ "untrusted 0.9.0",
 ]
 
 [[package]]
@@ -5134,7 +5134,7 @@ version = "0.7.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8d6753e460c998bbd4cd8c6f0ed9a64346fcca0723d6e75e52fdc351c5d2169d"
 dependencies = [
- "ahash 0.8.5",
+ "ahash 0.8.6",
  "atoi",
  "bigdecimal",
  "byteorder",
@@ -6115,7 +6115,7 @@ checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f"
 [[package]]
 name = "vine-api"
 version = "0.1.0"
-source = "git+https://github.com/ulagbulag/OpenARK.git#37e4483df6b3abd34adc0e47a633a516a98bd628"
+source = "git+https://github.com/ulagbulag/OpenARK.git#d580c6ffefaa2996026dd3cd7bb8c185266f5400"
 dependencies = [
  "Inflector",
  "anyhow",
@@ -6458,18 +6458,18 @@ dependencies = [
 
 [[package]]
 name = "zerocopy"
-version = "0.7.11"
+version = "0.7.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4c19fae0c8a9efc6a8281f2e623db8af1db9e57852e04cde3e754dd2dc29340f"
+checksum = "69c48d63854f77746c68a5fbb4aa17f3997ece1cb301689a257af8cb80610d21"
 dependencies = [
  "zerocopy-derive",
 ]
 
 [[package]]
 name = "zerocopy-derive"
-version = "0.7.11"
+version = "0.7.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fc56589e9ddd1f1c28d4b4b5c773ce232910a6bb67a70133d61c9e347585efe9"
+checksum = "c258c1040279e4f88763a113de72ce32dde2d50e2a94573f15dd534cea36a16d"
 dependencies = [
  "proc-macro2",
  "quote",
