@@ -7,7 +7,7 @@
   "backend": true,
   "executable": "gpx_openark",
   "info": {
-    "description": "Datasource",
+    "description": "Open source Connected Data Lake compatible with OpenARK",
     "author": {
       "name": "Ho Kim"
     },
