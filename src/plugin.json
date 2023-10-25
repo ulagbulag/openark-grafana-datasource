@@ -17,7 +17,12 @@
       "large": "img/logo-large.png"
     },
     "links": [],
-    "screenshots": [],
+    "screenshots": [
+      {
+        "name": "Raw Query",
+        "path": "img/screenshots/query_raw.png"
+      }
+    ],
     "version": "%VERSION%",
     "updated": "%TODAY%"
   },
