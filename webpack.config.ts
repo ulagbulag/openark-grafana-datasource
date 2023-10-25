@@ -9,6 +9,11 @@ const config = async (env): Promise<Configuration> => {
   const baseConfig = await grafanaConfig(env);
 
   return merge(baseConfig, {
+    output: {
+      publicPath: '/',
+      uniqueName: undefined,
+    },
+
     plugins: [
       new CopyWebpackPlugin({
         patterns: [
