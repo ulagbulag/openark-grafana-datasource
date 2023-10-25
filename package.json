@@ -3,7 +3,7 @@
   "version": "0.1.6",
   "description": "Open source Connected Data Lake compatible with OpenARK",
   "scripts": {
-    "build": "webpack -c ./webpack.config.ts --env production",
+    "build": "webpack -c ./webpack.config.ts --env production && sed -i 's/\\(webpack:\\/\\/\\)ulagbulag-openark-datasource\\//\\1\\//g' './dist/module.js.map'",
     "dev": "webpack -w -c ./webpack.config.ts --env development",
     "test": "jest --watch --onlyChanged",
     "test:ci": "jest --passWithNoTests --maxWorkers 4",
