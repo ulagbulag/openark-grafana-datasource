@@ -1,6 +1,6 @@
 {
   "name": "openark",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Datasource",
   "scripts": {
     "build": "webpack -c ./webpack.config.ts --env production",
